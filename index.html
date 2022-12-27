@@ -1,0 +1,68 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Shadow Dom</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<h1>It's no Shadow DOM</h1>
+<shower-deck>
+  <template shadowroot="open">
+    <link rel="stylesheet" href="css/deck.css">
+    <shower-slide>
+      <template shadowroot="open">
+        <link rel="stylesheet" href="css/slide.css">
+        <h3>Slide-1</h3>
+      </template>
+    </shower-slide>
+    <shower-slide>
+      <template shadowroot="open">
+        <link rel="stylesheet" href="css/slide.css">
+        <h3>Slide-2</h3>
+        <style>
+          h3 {
+            color: tomato;
+          }
+        </style>
+      </template>
+    </shower-slide>
+    <shower-slide>
+      <template shadowroot="open">
+        <link rel="stylesheet" href="css/slide.css">
+        <h3>Slide-3</h3>
+        <style>
+          h3 {
+            color: cornflowerblue;
+          }
+        </style>
+      </template>
+    </shower-slide>
+  </template>
+
+</shower-deck>
+<script>
+  const el = document.createElement("div")
+  const shadowRoot = el.attachShadow({mode: "open"})
+
+  shadowRoot.innerHTML = "<h2>It Shadow Dom</h2>"
+
+  const shadowContainer = document.querySelector("body")
+  shadowContainer.appendChild(el)
+</script>
+<!-- Add your site or application content here -->
+<p>Hello world! This is HTML5 Boilerplate.</p>
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>

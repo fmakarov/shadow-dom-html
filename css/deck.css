@@ -1,0 +1,9 @@
+:host{
+  display: block;
+  box-sizing: border-box;
+  padding: 25px;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: lightslategray;
+  font-family: "DIN Condensed";
+}
